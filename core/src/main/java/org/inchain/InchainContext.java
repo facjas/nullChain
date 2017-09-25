@@ -20,7 +20,7 @@ public class InchainContext {
         return instance;
     }
 
-    public static TaskManager getTaskManager(){
+    public TaskManager getTaskManager(){
         return TaskManager.getInstance();
     }
 
@@ -60,6 +60,6 @@ public class InchainContext {
 
     public static void main(String []args){
         InchainContext.initContext();
-        System.out.println(getTaskManager().info());
+        System.out.println(InchainContext.getInchainContext().getTaskManager().info());
     }
 }
