@@ -28,6 +28,7 @@ public abstract class MQModule<T> extends InchainModule implements QueueService<
                 QueueManager.startQueueStatusLog();
             }
         };
+        t1.setParent(instance);
         //启动速度统计任务
         ScheduledExecutorService service = new ScheduledThreadPoolExecutor(1);
         service.scheduleAtFixedRate(t1, 0, QueueManager.getLatelySecond(), TimeUnit.SECONDS);

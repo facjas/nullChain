@@ -1,5 +1,7 @@
 package org.inchain;
 
+import org.inchain.queue.service.QueueService;
+
 /**
  * Created by win10 on 2017/9/20.
  */
@@ -24,6 +26,10 @@ public class InchainContext {
         return TaskManager.getInstance();
     }
 
+    public MQModule getMqInstance(){
+        return mqInstance;
+    }
+
     private InchainContext(){
         initContext();
     }
@@ -31,6 +37,7 @@ public class InchainContext {
     public static void initContext(){
         initDB();
         initMQ();
+        mqInstance.startModule();
         initNetwork();
         initRpcServer();
         initConsensus();
