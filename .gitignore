@@ -1,6 +1,6 @@
 data
 logs
-.idea
+*/.idea
 */target
 *.iml
 *.class
