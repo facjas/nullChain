@@ -1,8 +1,8 @@
-package org.inchain.rpcserver;
+package org.inchain.rpcserver.services;
 
-import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.inchain.rpcserver.RpcService;
 
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
@@ -13,10 +13,7 @@ import java.util.Map;
  * Created by Niels on 2017/9/25.
  * inchain.org
  */
-@Service("rpc")
 public class RpcServiceImpl implements RpcService {
-
-
     @Override
     public void init() {
         String ip = "127.0.0.1";
