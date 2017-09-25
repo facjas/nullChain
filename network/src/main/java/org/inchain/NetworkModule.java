@@ -1,5 +1,7 @@
 package org.inchain;
 
+import org.inchain.task.InchainModule;
+
 /**
  * Hello world!
  *

@@ -1,7 +1,7 @@
 package org.inchain;
 
 
-import org.inchain.Message.InchainMessage;
+import org.inchain.message.InchainMessage;
 
 public interface IBroadcaster {
     void Boradcast(InchainMessage msg);

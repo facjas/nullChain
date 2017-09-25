@@ -1,5 +1,8 @@
 package org.inchain;
 
+import org.inchain.task.InchainModule;
+import org.inchain.task.InchainTread;
+
 public class RpcServer extends InchainModule
 {
     private static RpcServer instance = null;

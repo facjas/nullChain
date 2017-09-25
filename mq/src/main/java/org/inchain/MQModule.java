@@ -1,6 +1,8 @@
 package org.inchain;
 
 import org.inchain.queue.manager.QueueManager;
+import org.inchain.task.InchainModule;
+import org.inchain.task.InchainTread;
 
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

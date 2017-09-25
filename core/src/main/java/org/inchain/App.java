@@ -1,8 +1,5 @@
 package org.inchain;
 
-import org.inchain.queue.impl.InchainFQueue;
-import org.inchain.queue.service.QueueService;
-
 /**
  * Hello world!
  *

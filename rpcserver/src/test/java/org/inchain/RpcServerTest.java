@@ -1,5 +1,7 @@
 package org.inchain;
 
+import org.inchain.task.InchainTread;
+import org.inchain.task.TaskManager;
 import org.junit.Before;
 import org.junit.Test;
 

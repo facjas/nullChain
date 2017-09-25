@@ -1,12 +1,9 @@
 package org.inchain;
 
-import org.inchain.task.TaskManager;
 import org.inchain.queue.service.QueueService;
 import org.inchain.queue.service.QueueServiceFactory;
+import org.inchain.task.TaskManager;
 
-/**
- * Created by win10 on 2017/9/20.
- */
 public class InchainContext {
 
     private static InchainContext instance;

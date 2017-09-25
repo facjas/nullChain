@@ -1,5 +1,7 @@
 package org.inchain;
 
+import org.inchain.task.InchainModule;
+
 public class DBModule extends InchainModule
 {
     private static DBModule instance = null;
