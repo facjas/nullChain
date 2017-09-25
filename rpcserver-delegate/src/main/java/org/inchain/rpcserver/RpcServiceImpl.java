@@ -13,6 +13,7 @@ import java.util.Map;
  * Created by Niels on 2017/9/25.
  * inchain.org
  */
+@Service("rpc")
 public class RpcServiceImpl implements RpcService {
 
 
