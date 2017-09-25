@@ -1,9 +1,9 @@
-/data
-/logs
-/.idea
-/target
+data
+logs
+.idea
+*/target
+*.iml
 *.class
 *.classpath
-*.iml
 *.log
-*.logs
+
