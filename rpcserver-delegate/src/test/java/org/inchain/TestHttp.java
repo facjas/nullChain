@@ -1,7 +1,7 @@
 package org.inchain;
 
 import org.inchain.rpcserver.RpcService;
-import org.inchain.rpcserver.RpcServiceImpl;
+import org.inchain.rpcserver.services.RpcServiceImpl;
 import org.junit.Test;
 
 /**
