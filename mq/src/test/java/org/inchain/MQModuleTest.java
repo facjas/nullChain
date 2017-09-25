@@ -1,36 +1,58 @@
 package org.inchain;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.inchain.queue.service.QueueService;
+import org.inchain.queue.service.QueueServiceFactory;
+import org.inchain.util.log.Log;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
+
+/**
+ * Created by Niels on 2017/9/21.
+ */
+public class MQModuleTest {
+
+    private final String queueName = "test1";
+    private QueueService<Long> service = QueueServiceFactory.createQueueService();
 
 
-public class MQModuleTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public MQModuleTest(String testName )
-    {
-        super( testName );
+    @Test
+    public void test() {
+        //创建
+        boolean b = service.createQueue(queueName, 64);
+        assertTrue(b);
+
+        //写入
+        int count = 10;
+        long start = System.currentTimeMillis();
+        for (; count >= 0; count--) {
+            service.offer(queueName, count - 1l);
+        }
+        Log.info("offer count=" + count + ",use time(ms):" + (System.currentTimeMillis() - start));
+        assertTrue(true);
+
+        //取出
+        while (true) {
+            Log.info("start poll....");
+
+            Long data = null;
+//            try {
+//                data = service.take(queueName);
+//            } catch (InterruptedException e) {
+//                log.error("", e);
+//            }
+            data = service.poll(queueName);
+            if (data == null) {
+                break;
+            }
+            Log.info("poll data:" + data);
+        }
+
+
+        service.destroyQueue(queueName);
+        assertTrue(true);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( MQModuleTest.class );
-    }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
