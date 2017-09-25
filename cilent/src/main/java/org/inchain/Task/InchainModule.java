@@ -1,4 +1,4 @@
-package org.inchain;
+package org.inchain.Task;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -57,7 +57,7 @@ public class InchainModule extends InchainTread{
         return  threads;
     }
 
-    public void start(){
+    public void startMudule(){
         run();
     }
 

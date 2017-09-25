@@ -19,7 +19,7 @@ public class RpcServer extends InchainModule
             }
         };
         t1.start();
-        InchainTread t2 = new InchainTread("rpchttpThread235asdgasdfg"){
+        InchainTread t2 = new InchainTread(""){
             @Override
             public void run(){
 

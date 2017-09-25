@@ -1,4 +1,4 @@
-package org.inchain.Message;
+package org.inchain.message;
 
 public class InchainMessage {
 }

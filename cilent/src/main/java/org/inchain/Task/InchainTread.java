@@ -1,12 +1,8 @@
-package org.inchain;
+package org.inchain.Task;
 
-import javax.annotation.PostConstruct;
-import java.text.DateFormat;
 import java.util.Date;
 
-/**
- * Created by win10 on 2017/9/19.
- */
+
 public class InchainTread extends Thread {
 
     public enum STATUS{

@@ -1,5 +1,6 @@
 package org.inchain;
 
+import org.inchain.Task.TaskManager;
 import org.inchain.queue.service.QueueService;
 import org.inchain.queue.service.QueueServiceFactory;
 
