@@ -1,4 +1,4 @@
-package org.inchain.Task;
+package org.inchain.task;
 
 import java.util.Date;
 
