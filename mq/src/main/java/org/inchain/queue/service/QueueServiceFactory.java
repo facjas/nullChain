@@ -1,6 +1,5 @@
 package org.inchain.queue.service;
 
-import org.inchain.MQModule;
 import org.inchain.queue.service.impl.FQueueService;
 
 /**
@@ -16,7 +15,7 @@ public class QueueServiceFactory {
      *
      * @return
      */
-    public static final MQModule createQueueService() {
+    public static final QueueService createQueueService() {
         return createQueueService("FQueue");
     }
 
@@ -26,7 +25,7 @@ public class QueueServiceFactory {
      * @param type 目前只支持FQueue类型
      * @return
      */
-    public static final MQModule createQueueService(String type) {
+    public static final QueueService createQueueService(String type) {
         switch (type) {
             case "FQueue":
                 return new FQueueService();

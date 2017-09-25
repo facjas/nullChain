@@ -4,6 +4,7 @@ import org.inchain.fqueue.exception.FileFormatException;
 import org.inchain.MQModule;
 import org.inchain.queue.impl.InchainFQueue;
 import org.inchain.queue.manager.QueueManager;
+import org.inchain.queue.service.QueueService;
 import org.inchain.queue.util.stat.StatInfo;
 import org.inchain.util.log.Log;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
  * Created by Niels on 2017/9/20.
  */
 
-public class FQueueService<T> extends MQModule<T> {
+public class FQueueService<T> implements QueueService<T> {
 
     /**
      * 创建一个持久化队列

@@ -1,19 +1,17 @@
 package org.inchain;
 
 import org.inchain.queue.manager.QueueManager;
-import org.inchain.queue.service.QueueService;
-import org.inchain.queue.service.QueueServiceFactory;
 
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public abstract class MQModule<T> extends InchainModule implements QueueService<T> {
+public class MQModule<T> extends InchainModule {
     private static MQModule instance = null;
 
-    public static MQModule getInstance() {
-        if (instance == null) {
-            instance = QueueServiceFactory.createQueueService();
+    public static synchronized MQModule getInstance() {
+        if(null==instance){
+            instance = new MQModule();
         }
         return instance;
     }
@@ -21,7 +19,7 @@ public abstract class MQModule<T> extends InchainModule implements QueueService<
     /**
      * 启动队列服务
      */
-    public static void startModule() {
+    public void startModule() {
         InchainTread t1 = new InchainTread("queueStatusLogThread") {
             @Override
             public void run() {

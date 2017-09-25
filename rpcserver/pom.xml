@@ -30,9 +30,10 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <groupId>org.inchain</groupId>
+            <artifactId>mq</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 </project>

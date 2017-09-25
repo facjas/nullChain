@@ -1,6 +1,7 @@
 package org.inchain;
 
 import org.inchain.queue.service.QueueService;
+import org.inchain.queue.service.QueueServiceFactory;
 
 /**
  * Created by win10 on 2017/9/20.
@@ -9,6 +10,7 @@ public class InchainContext {
 
     private static InchainContext instance;
     private static TaskManager taskManager;
+    private static QueueService queueService;
 
     private static DBModule dbInstance;
     private static MQModule mqInstance;
@@ -26,6 +28,17 @@ public class InchainContext {
         return TaskManager.getInstance();
     }
 
+    /**
+     * 队列服务对象
+     * @return
+     */
+    public QueueService getQueueService(){
+        if(queueService==null){
+            queueService = QueueServiceFactory.createQueueService();
+        }
+        return queueService;
+    }
+
     public MQModule getMqInstance(){
         return mqInstance;
     }
@@ -37,7 +50,6 @@ public class InchainContext {
     public static void initContext(){
         initDB();
         initMQ();
-        mqInstance.startModule();
         initNetwork();
         initRpcServer();
         initConsensus();
@@ -50,6 +62,7 @@ public class InchainContext {
 
     public static void initMQ(){
         mqInstance = MQModule.getInstance();
+        mqInstance.startModule();
     }
 
     public static void initNetwork(){
