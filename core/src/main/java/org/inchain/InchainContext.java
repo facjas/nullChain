@@ -51,7 +51,7 @@ public class InchainContext {
 
     public static void initRpcServer(){
         rpcServerInstance = RpcServer.getInstance();
-        RpcServer.starthttp();
+        RpcServer.startModule();
     }
 
     public static void initConsensus(){

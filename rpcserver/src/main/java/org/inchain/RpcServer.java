@@ -11,7 +11,7 @@ public class RpcServer extends InchainModule
         return instance;
     }
 
-    public static void starthttp(){
+    public static void startModule(){
         InchainTread t1 = new InchainTread("rpchttpThread"){
             @Override
             public void run(){
