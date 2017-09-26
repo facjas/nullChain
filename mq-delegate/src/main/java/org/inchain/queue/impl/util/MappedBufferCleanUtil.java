@@ -1,4 +1,4 @@
-package org.inchain.queue.util;
+package org.inchain.queue.impl.util;
 
 import sun.nio.ch.FileChannelImpl;
 

@@ -1,7 +1,7 @@
-package org.inchain;
+package org.inchain.rpcserver.impl;
 
 import junit.framework.TestCase;
-import org.inchain.rpcserver.RpcServerService;
+import org.inchain.rpcserver.intf.RpcServerService;
 import org.inchain.util.log.Log;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
  * Created by Niels on 2017/9/25.
  * inchain.org
  */
-public class TestHttp extends TestCase{
+public class TestHttp extends TestCase {
 
     public static ClassPathXmlApplicationContext applicationContext;
 
@@ -26,13 +26,10 @@ public class TestHttp extends TestCase{
         }
         Log.info("get application context");
         try {
-            applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+            applicationContext = new ClassPathXmlApplicationContext();
+            applicationContext.getEnvironment().setActiveProfiles();
         } catch (Exception e) {
-            if (e instanceof FileNotFoundException) {
-                Log.error("There is not applicationContext.xml in classpath!", e);
-            } else {
-                Log.error("", e);
-            }
+            Log.error("", e);
             return;
         }
         Log.info("System is started!");

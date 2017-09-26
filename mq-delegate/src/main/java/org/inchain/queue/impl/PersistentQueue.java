@@ -1,4 +1,4 @@
-package org.inchain.queue;
+package org.inchain.queue.impl;
 
 import org.inchain.fqueue.exception.FileFormatException;
 import org.inchain.mq.intf.StatInfo;

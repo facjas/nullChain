@@ -1,6 +1,6 @@
 package org.inchain;
 
-import org.inchain.queue.util.MappedBufferCleanUtil;
+import org.inchain.queue.impl.util.MappedBufferCleanUtil;
 
 import java.io.File;
 import java.io.RandomAccessFile;

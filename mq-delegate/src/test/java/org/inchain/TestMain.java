@@ -1,7 +1,7 @@
 package org.inchain;
 
 import org.inchain.mq.intf.QueueService;
-import org.inchain.queue.service.impl.FQueueService;
+import org.inchain.queue.service.FQueueService;
 
 /**
  * Created by Niels on 2017/9/21.

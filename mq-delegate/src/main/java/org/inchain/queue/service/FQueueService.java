@@ -1,20 +1,18 @@
-package org.inchain.queue.service.impl;
+package org.inchain.queue.service;
 
-import org.inchain.fqueue.exception.FileFormatException;
 import org.inchain.mq.exception.QueueException;
 import org.inchain.mq.intf.QueueService;
 import org.inchain.mq.intf.StatInfo;
 import org.inchain.queue.impl.InchainFQueue;
-import org.inchain.queue.manager.QueueManager;
+import org.inchain.queue.impl.manager.QueueManager;
 import org.inchain.util.log.Log;
-
-import java.io.IOException;
+import org.springframework.stereotype.Service;
 
 /**
  * 队列服务类
  * Created by Niels on 2017/9/20.
  */
-
+@Service
 public class FQueueService<T> implements QueueService<T> {
 
     /**

@@ -2,8 +2,7 @@ package org.inchain.queue.impl;
 
 import org.inchain.fqueue.FQueue;
 import org.inchain.fqueue.exception.FileFormatException;
-import org.inchain.queue.PersistentQueue;
-import org.inchain.queue.util.SerializeUtils;
+import org.inchain.queue.impl.util.SerializeUtils;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package org.inchain.rpcserver;
+package org.inchain.rpcserver.intf;
 
 
 /**

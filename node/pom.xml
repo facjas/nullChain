@@ -31,12 +31,52 @@
         </dependency>
         <dependency>
             <groupId>org.inchain</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>global</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
             <artifactId>db-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.inchain</groupId>
+            <artifactId>mq-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
             <artifactId>network-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>rpcserver-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>rpcserver-delegate</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>db-delegate</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>mq-delegate</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>network-delegate</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

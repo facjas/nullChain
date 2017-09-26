@@ -1,10 +1,10 @@
-package org.inchain.queue.manager;
+package org.inchain.queue.impl.manager;
 
 import org.inchain.fqueue.exception.FileFormatException;
 import org.inchain.mq.exception.QueueException;
 import org.inchain.mq.intf.StatInfo;
-import org.inchain.queue.PersistentQueue;
-import org.inchain.queue.util.stat.StatInfoImpl;
+import org.inchain.queue.impl.PersistentQueue;
+import org.inchain.queue.impl.util.stat.StatInfoImpl;
 import org.inchain.util.log.Log;
 
 import java.io.IOException;

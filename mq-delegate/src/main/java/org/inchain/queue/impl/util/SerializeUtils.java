@@ -1,4 +1,4 @@
-package org.inchain.queue.util;
+package org.inchain.queue.impl.util;
 
 
 import org.inchain.util.log.Log;

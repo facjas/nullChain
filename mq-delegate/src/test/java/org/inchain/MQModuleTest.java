@@ -1,9 +1,7 @@
 package org.inchain;
 
-import org.inchain.mq.exception.QueueException;
 import org.inchain.mq.intf.QueueService;
-import org.inchain.mq.intf.StatInfo;
-import org.inchain.queue.service.impl.FQueueService;
+import org.inchain.queue.service.FQueueService;
 import org.inchain.util.log.Log;
 import org.junit.Test;
 

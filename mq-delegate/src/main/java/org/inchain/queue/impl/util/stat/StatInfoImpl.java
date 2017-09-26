@@ -1,8 +1,8 @@
-package org.inchain.queue.util.stat;
+package org.inchain.queue.impl.util.stat;
 
 import org.inchain.mq.exception.QueueException;
 import org.inchain.mq.intf.StatInfo;
-import org.inchain.queue.manager.QueueManager;
+import org.inchain.queue.impl.manager.QueueManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
