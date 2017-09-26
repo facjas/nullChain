@@ -1,12 +1,10 @@
 package org.inchain;
 
 import org.inchain.constant.CfgConstant;
-import org.inchain.rpcserver.intf.RpcServerService;
 import org.inchain.util.cfg.ConfigLoader;
 import org.inchain.util.log.Log;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
