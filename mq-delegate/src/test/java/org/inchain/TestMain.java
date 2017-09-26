@@ -1,5 +1,8 @@
 package org.inchain;
 
+import org.inchain.mq.intf.QueueService;
+import org.inchain.queue.service.impl.FQueueService;
+
 /**
  * Created by Niels on 2017/9/21.
  * inchain.org
@@ -7,7 +10,7 @@ package org.inchain;
 public class TestMain {
 
     public static void main(String[] args) {
-        final QueueService<String> service = QueueServiceFactory.createQueueService();
+        final QueueService<String> service = new FQueueService<>();
         service.createQueue("test", 10 * 1024 * 1024);
         new Thread(new Runnable() {
             @Override

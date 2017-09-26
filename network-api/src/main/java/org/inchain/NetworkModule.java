@@ -1,12 +1,11 @@
 package org.inchain;
 
-import org.inchain.task.InchainModule;
 
 /**
  * Hello world!
  *
  */
-public class NetworkModule extends InchainModule
+public class NetworkModule
 {
     private static NetworkModule instance = null;
     private IBroadcaster broadcaster = null;

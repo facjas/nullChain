@@ -14,6 +14,15 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -21,12 +30,19 @@
             <artifactId>util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.196</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>global</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
     </dependencies>
 </project>
