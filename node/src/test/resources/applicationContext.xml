@@ -15,7 +15,7 @@
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:cfg.properties</value>
+                <value>classpath:rpc-server.properties</value>
             </list>
         </property>
     </bean>

@@ -18,7 +18,8 @@
     </developers>
 
     <modules>
-        <module>client</module>
+        <module>global</module>
+        <module>node</module>
         <module>core</module>
         <module>util</module>
         <module>db-api</module>
@@ -29,6 +30,7 @@
         <module>mq-delegate</module>
         <module>network-api</module>
         <module>network-delegate</module>
+        <module>global</module>
     </modules>
     <packaging>pom</packaging>
 

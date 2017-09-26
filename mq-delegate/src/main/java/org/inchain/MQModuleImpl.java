@@ -1,5 +1,6 @@
 package org.inchain;
 
+import org.inchain.mq.MQModule;
 import org.inchain.queue.manager.QueueManager;
 import org.inchain.task.InchainModule;
 import org.inchain.task.InchainTread;
@@ -8,12 +9,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class MQModule<T> extends InchainModule {
-    private static MQModule instance = null;
+public class MQModuleImpl extends InchainModule {
+    private static MQModuleImpl instance = null;
 
-    public static synchronized MQModule getInstance() {
+    public static synchronized MQModuleImpl getInstance() {
         if(null==instance){
-            instance = new MQModule();
+            instance = new MQModuleImpl();
         }
         return instance;
     }
