@@ -95,6 +95,19 @@
             <version>1.51.0.0</version>
         </dependency>
 
+        <!-- json 工具 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
         <!-- spring 相关  -->
         <dependency>
             <groupId>org.springframework</groupId>
