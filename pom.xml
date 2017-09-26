@@ -30,7 +30,6 @@
         <module>mq-delegate</module>
         <module>network-api</module>
         <module>network-delegate</module>
-        <module>global</module>
     </modules>
     <packaging>pom</packaging>
 
