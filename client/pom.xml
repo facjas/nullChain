@@ -7,32 +7,36 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>db</artifactId>
+    <artifactId>client</artifactId>
     <packaging>jar</packaging>
 
+    <name>cilent</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.inchain</groupId>
-            <artifactId>util</artifactId>
+            <artifactId>bcv2</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.inchain</groupId>
-            <artifactId>client</artifactId>
+            <artifactId>db</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inchain</groupId>
+            <artifactId>network</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

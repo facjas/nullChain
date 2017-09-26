@@ -27,6 +27,8 @@
         <module>rpcserver</module>
         <module>mq</module>
         <module>protocol</module>
+        <module>mq-api</module>
+        <module>mq-delegate</module>
     </modules>
     <packaging>pom</packaging>
 

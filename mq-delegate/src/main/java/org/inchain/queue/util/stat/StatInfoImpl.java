@@ -1,5 +1,6 @@
 package org.inchain.queue.util.stat;
 
+import org.inchain.intf.StatInfo;
 import org.inchain.queue.exception.QueueException;
 import org.inchain.queue.manager.QueueManager;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Created by Niels on 2017/9/21.
  * inchain.org
  */
-public class StatInfo {
+public class StatInfoImpl implements StatInfo {
     private String name;
     //加载时间
     private long startTime;
@@ -35,7 +36,7 @@ public class StatInfo {
      * @param lastSize     启动后从磁盘加载的数据条数
      * @param latelySecond 速度统计的时间段（秒）
      */
-    public StatInfo(String queueName, long lastSize, int latelySecond) {
+    public StatInfoImpl(String queueName, long lastSize, int latelySecond) {
         if (queueName==null||queueName.trim().isEmpty()) {
             throw new QueueException("队列名称不正确");
         }
