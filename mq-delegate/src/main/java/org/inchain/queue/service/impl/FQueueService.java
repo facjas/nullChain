@@ -1,11 +1,11 @@
 package org.inchain.queue.service.impl;
 
 import org.inchain.fqueue.exception.FileFormatException;
-import org.inchain.MQModule;
+import org.inchain.mq.exception.QueueException;
+import org.inchain.mq.intf.QueueService;
+import org.inchain.mq.intf.StatInfo;
 import org.inchain.queue.impl.InchainFQueue;
 import org.inchain.queue.manager.QueueManager;
-import org.inchain.queue.service.QueueService;
-import org.inchain.queue.util.stat.StatInfo;
 import org.inchain.util.log.Log;
 
 import java.io.IOException;
@@ -91,7 +91,7 @@ public class FQueueService<T> implements QueueService<T> {
     }
 
     @Override
-    public void close(String queueName) throws IOException, FileFormatException {
+    public void close(String queueName) throws  QueueException {
         QueueManager.close(queueName);
     }
 

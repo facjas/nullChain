@@ -1,8 +1,5 @@
 package org.inchain;
 
-import junit.framework.TestCase;
-import org.inchain.queue.service.QueueService;
-import org.inchain.queue.service.QueueServiceFactory;
 import org.inchain.util.log.Log;
 import org.junit.Test;
 

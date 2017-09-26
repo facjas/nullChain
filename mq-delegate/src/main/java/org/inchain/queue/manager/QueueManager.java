@@ -1,9 +1,10 @@
 package org.inchain.queue.manager;
 
 import org.inchain.fqueue.exception.FileFormatException;
+import org.inchain.mq.exception.QueueException;
+import org.inchain.mq.intf.StatInfo;
 import org.inchain.queue.PersistentQueue;
-import org.inchain.queue.exception.QueueException;
-import org.inchain.queue.util.stat.StatInfo;
+import org.inchain.queue.util.stat.StatInfoImpl;
 import org.inchain.util.log.Log;
 
 import java.io.IOException;
@@ -69,7 +70,7 @@ public abstract class QueueManager {
             latelySecond = LatelySecond;
         }
         Log.debug("队列初始化，名称：{}，单个文件最大大小：{}", queue.getQueueName(), queue.getMaxSize());
-        queue.setStatInfo(new StatInfo(queue.getQueueName(), queue.size(), latelySecond));
+        queue.setStatInfo(new StatInfoImpl(queue.getQueueName(), queue.size(), latelySecond));
         queuesMap.put(queueName, queue);
         lockMap.put(queueName, new ReentrantLock());
     }
@@ -129,13 +130,16 @@ public abstract class QueueManager {
         queue.clear();
     }
 
-    public static void close(String queueName) throws IOException, FileFormatException {
+    public static void close(String queueName) throws QueueException {
         PersistentQueue queue = queuesMap.get(queueName);
         if (null == queue) {
             throw new QueueException("队列不存在");
         }
-
-        queue.close();
+        try{
+            queue.close();
+        }catch(Exception e){
+            throw new QueueException(e);
+        }
         Log.debug("关闭队列实例，名称：{}，当前长度：{}。", queueName, queue.size());
     }
 

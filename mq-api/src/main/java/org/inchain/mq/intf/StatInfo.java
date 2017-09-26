@@ -1,4 +1,4 @@
-package org.inchain.intf;
+package org.inchain.mq.intf;
 
 import java.util.concurrent.atomic.AtomicLong;
 

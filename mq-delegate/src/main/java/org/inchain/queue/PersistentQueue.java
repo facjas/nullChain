@@ -1,7 +1,8 @@
 package org.inchain.queue;
 
 import org.inchain.fqueue.exception.FileFormatException;
-import org.inchain.queue.util.stat.StatInfo;
+import org.inchain.mq.intf.StatInfo;
+
 
 import java.io.IOException;
 

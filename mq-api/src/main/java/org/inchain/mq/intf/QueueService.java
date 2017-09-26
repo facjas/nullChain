@@ -1,7 +1,8 @@
-package org.inchain.queue.service;
+package org.inchain.mq.intf;
 
-import org.inchain.fqueue.exception.FileFormatException;
-import org.inchain.queue.util.stat.StatInfo;
+
+import org.inchain.exception.InchainException;
+import org.inchain.mq.exception.QueueException;
 
 import java.io.IOException;
 
@@ -77,9 +78,9 @@ public interface QueueService<T> {
      *
      * @param queueName
      * @throws IOException
-     * @throws FileFormatException
+     * @throws InchainException
      */
-    void close(String queueName) throws IOException, FileFormatException;
+    void close(String queueName) throws QueueException;
 
     /**
      * @param queueName

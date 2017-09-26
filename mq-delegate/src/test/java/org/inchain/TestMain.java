@@ -1,8 +1,5 @@
 package org.inchain;
 
-import org.inchain.queue.service.QueueService;
-import org.inchain.queue.service.QueueServiceFactory;
-
 /**
  * Created by Niels on 2017/9/21.
  * inchain.org
