@@ -18,11 +18,11 @@ import java.util.Map;
  */
 @Service
 public class RpcServerServiceImpl implements RpcServerService {
-    @Value("server.ip")
+    @Value("${server.ip}")
     private String serverIp;
-    @Value("server.port")
+    @Value("${server.port}")
     private String serverPort;
-    @Value("rest.packages")
+    @Value("${rest.packages}")
     private String packages;
     @Override
     public void init() {

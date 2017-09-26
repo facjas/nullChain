@@ -1,5 +1,6 @@
 package org.inchain;
 
+import junit.framework.TestCase;
 import org.inchain.rpcserver.RpcServerService;
 import org.inchain.util.log.Log;
 import org.junit.Test;
@@ -11,14 +12,14 @@ import java.io.FileNotFoundException;
  * Created by Niels on 2017/9/25.
  * inchain.org
  */
-public class TestHttp {
+public class TestHttp extends TestCase{
 
     public static ClassPathXmlApplicationContext applicationContext;
 
     /**
-     * @param args
+     * start spring
      */
-    public static void main(String[] args) {
+    public static void start() {
         //加载spring环境
         if (null != applicationContext) {
             return;
@@ -39,7 +40,7 @@ public class TestHttp {
 
     @Test
     public void test() {
-        main(null);
+        start();
         RpcServerService service = applicationContext.getBean(RpcServerService.class);
 
         service.init();
