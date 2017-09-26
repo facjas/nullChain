@@ -18,17 +18,17 @@
     </developers>
 
     <modules>
-        <module>cilent</module>
+        <module>client</module>
         <module>core</module>
-        <module>db</module>
-        <module>network</module>
         <module>util</module>
-        <module>rpcclient</module>
-        <module>rpcserver</module>
-        <module>mq</module>
-        <module>protocol</module>
+        <module>db-api</module>
+        <module>db-delegate</module>
+        <module>rpcserver-api</module>
+        <module>rpcserver-delegate</module>
         <module>mq-api</module>
         <module>mq-delegate</module>
+        <module>network-api</module>
+        <module>network-delegate</module>
     </modules>
     <packaging>pom</packaging>
 

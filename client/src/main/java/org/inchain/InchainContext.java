@@ -8,7 +8,7 @@ public class InchainContext {
     private static TaskManager taskManager;
 //    private static QueueService queueService;
 
-    private static DBModule dbInstance;
+//    private static DBModule dbInstance;
 //    private static MQModule mqInstance;
     private static NetworkModule networkModuleInstace;
 //    private static RpcServer rpcServerInstance;
@@ -53,7 +53,7 @@ public class InchainContext {
     }
 
     public static void initDB(){
-        dbInstance = DBModule.getInstance();
+//        dbInstance = DBModule.getInstance();
     }
 
 //    public static void initMQ(){0

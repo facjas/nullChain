@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>protocol</artifactId>
+    <artifactId>network-delegate</artifactId>
     <packaging>jar</packaging>
 
-    <name>protocol</name>
+    <name>network-delegate</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
