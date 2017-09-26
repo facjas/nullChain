@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>node</artifactId>
+    <artifactId>client</artifactId>
     <packaging>jar</packaging>
 
-    <name>cilent</name>
+    <name>node</name>
     <url>http://maven.apache.org</url>
 
     <properties>
