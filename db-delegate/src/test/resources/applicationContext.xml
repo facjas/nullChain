@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+	       ">
+
+    <!--开启spring注解扫描 -->
+    <context:component-scan base-package="org.inchain.*"/>
+    <!-- 配置加载的外部配置项 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:db_cfg.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.h2.jdbcx.JdbcConnectionPool" destroy-method="dispose">
+        <constructor-arg>
+            <bean class="org.h2.jdbcx.JdbcDataSource">
+                <!-- 内存模式 -->
+                <property name="URL" value="jdbc:h2:mem:test" />
+                <!-- 文件模式 -->
+                <!-- <property name="URL" value="jdbc:h2:testRestDB" /> -->
+                <property name="user" value="sa" />
+                <property name="password" value="sa" />
+            </bean>
+        </constructor-arg>
+    </bean>
+
+
+
+</beans>
