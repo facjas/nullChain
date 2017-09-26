@@ -8,6 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -30,7 +32,7 @@ public class Bootstrap {
             String dbType = prop.getProperty(CfgConstant.MybatisDbType);
             //load spring context
             boolean result = loadSpringContext(profile, dbType);
-            if(!result){
+            if (!result) {
                 break;
             }
             //init modules
@@ -49,9 +51,10 @@ public class Bootstrap {
         try {
             ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext();
             ctx.getEnvironment().setActiveProfiles(profile);
-            String filePath[] = new String[]{"classpath:/applicationContext.xml"};
-
-            ctx.setConfigLocations(filePath);
+            List<String> filePath = new ArrayList<>();
+            filePath.add("classpath:/applicationContext.xml");
+//            filePath.add("classpath:/database-"+dbType+".xml");
+            ctx.setConfigLocations(filePath.toArray(new String[]{}));
             ctx.refresh();
             applicationContext = ctx;
             Log.info("System is started!");
