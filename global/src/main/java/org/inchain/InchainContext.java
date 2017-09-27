@@ -9,14 +9,12 @@ import org.springframework.stereotype.Service;
 public class InchainContext {
 
     @Autowired
-    private RpcServerService rpcServerService;
-    @Autowired
     private QueueService queueService;
 
-    public RpcServerService getRpcServerService() {
-        return rpcServerService;
-    }
-
+    /**
+     * get The Queue service instance
+     * @return
+     */
     public QueueService getQueueService() {
         return queueService;
     }
