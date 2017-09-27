@@ -6,8 +6,12 @@ package org.inchain.rpcserver.intf;
  */
 public interface RpcServerService {
     /**
-     * 启动http服务器，支持restFul接口
+     * start http server，restFul
      */
     void init();
+
+    void shutdown();
+
+    boolean isStarted();
 
 }

@@ -1,20 +1,43 @@
 package org.inchain.rpcserver.intf;
 
 
+import org.inchain.task.InchainModule;
+import org.inchain.task.ModuleStatus;
+
 /**
  * Created by Niels on 2017/9/26.
  * inchain.org
  */
-//todo 待实现
-public class RpcServerModule {
+public abstract class RpcServerModule implements InchainModule{
+    protected RpcServerModule(){
+        this.moduleName = this.getClass().getSimpleName();
+        this.status = ModuleStatus.UNSTART;
+    }
+    private String moduleName;
+    private ModuleStatus status;
 
-    public void startModule(){
-
+    @Override
+    public String getModuleName() {
+        return this.moduleName;
     }
 
-    public String toString() {
-
-
-        return "";
+    @Override
+    public void reboot() {
+        this.shutdown();
+        this.start();
     }
+
+    @Override
+    public ModuleStatus getStatus() {
+        return status;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public void setStatus(ModuleStatus status) {
+        this.status = status;
+    }
+
 }

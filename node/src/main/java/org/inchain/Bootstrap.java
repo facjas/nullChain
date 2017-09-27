@@ -1,6 +1,8 @@
 package org.inchain;
 
 import org.inchain.constant.CfgConstant;
+import org.inchain.mq.MQModule;
+import org.inchain.rpcserver.intf.RpcServerModule;
 import org.inchain.util.cfg.ConfigLoader;
 import org.inchain.util.log.Log;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -34,7 +36,9 @@ public class Bootstrap {
                 break;
             }
             //init modules
-
+            initDB();
+            
+            initMQ();
             //init rpc server
             result = initRpcServer();
             if (!result) {
@@ -44,13 +48,22 @@ public class Bootstrap {
         } while (false);
     }
 
+    private static void initDB() {
+    }
+
+    private static void initMQ() {
+        MQModule module = applicationContext.getBean(MQModule.class);
+        module.start();
+    }
+
     /**
      *
      * @return 启动结果
      */
     private static boolean initRpcServer() {
-
-        return false;
+        RpcServerModule module = applicationContext.getBean(RpcServerModule.class);
+        module.start();
+        return true;
     }
 
     /**

@@ -1,5 +1,6 @@
 package org.inchain.rpcserver.impl.services;
 
+import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.inchain.rpcserver.intf.RpcServerService;
@@ -18,12 +19,18 @@ import java.util.Map;
  */
 @Service
 public class RpcServerServiceImpl implements RpcServerService {
+
+
     @Value("${server.ip}")
     private String serverIp;
     @Value("${server.port}")
     private String serverPort;
     @Value("${rest.packages}")
     private String packages;
+
+    private HttpServer httpServer;
+
+
     @Override
     public void init() {
         URI serverURI = UriBuilder.fromUri("http://" + serverIp + "/").port(Integer.parseInt(serverPort)).build();
@@ -31,8 +38,18 @@ public class RpcServerServiceImpl implements RpcServerService {
         initParams.put("jersey.config.server.provider.packages", packages);
         ResourceConfig rc = new ResourceConfig();
         rc.addProperties(initParams);
-        GrizzlyHttpServerFactory.createHttpServer(serverURI, rc);
+        httpServer = GrizzlyHttpServerFactory.createHttpServer(serverURI, rc);
         Log.info("http restFul server is started!");
+    }
+
+    @Override
+    public void shutdown() {
+        httpServer.shutdown();
+    }
+
+    @Override
+    public boolean isStarted() {
+        return this.httpServer.isStarted();
     }
 
     public void setServerIp(String serverIp) {
