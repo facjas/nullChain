@@ -10,7 +10,7 @@
     <artifactId>mq-delegate</artifactId>
     <packaging>jar</packaging>
 
-    <name>mq</name>
+    <name>mq-delegate</name>
     <url>http://maven.apache.org</url>
 
     <properties>

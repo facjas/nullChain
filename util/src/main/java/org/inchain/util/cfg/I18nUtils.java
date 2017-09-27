@@ -33,7 +33,6 @@ public class I18nUtils {
         try {
             URL furl = I18nUtils.class.getClassLoader().getResource(folder);
             File folderFile = new File(furl.getPath());
-
             for(File file :folderFile.listFiles()){
                 InputStream is = new FileInputStream(file);
                 Properties prop = new Properties();
@@ -55,7 +54,7 @@ public class I18nUtils {
     }
 
     public static String get(int id){
-        if(nowMapping==null){
+         if(nowMapping==null){
             nowMapping = AllMapping.get(key);
         }
         return nowMapping.getProperty(id+"");

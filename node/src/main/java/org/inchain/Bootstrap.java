@@ -38,14 +38,13 @@ public class Bootstrap {
             }
             //init modules
             initDB();
-            
+
             initMQ();
             //init rpc server
             result = initRpcServer();
             if (!result) {
                 break;
             }
-            System.out.println(I18nUtils.get(10001));
             Log.info("");
         } while (false);
     }
@@ -56,6 +55,7 @@ public class Bootstrap {
     private static void initMQ() {
         MQModule module = applicationContext.getBean(MQModule.class);
         module.start();
+        Log.info(module.getInfo());
     }
 
     /**
@@ -65,6 +65,7 @@ public class Bootstrap {
     private static boolean initRpcServer() {
         RpcServerModule module = applicationContext.getBean(RpcServerModule.class);
         module.start();
+        Log.info(module.getInfo());
         return true;
     }
 
@@ -80,6 +81,7 @@ public class Bootstrap {
             ctx.getEnvironment().setActiveProfiles(profile);
             List<String> filePath = new ArrayList<>();
             filePath.add("classpath:/applicationContext.xml");
+            //todo 这里追加数据库配置文件
 //            filePath.add("classpath:/database-"+dbType+".xml");
             ctx.setConfigLocations(filePath.toArray(new String[]{}));
             ctx.refresh();
