@@ -4,6 +4,7 @@ import org.inchain.constant.CfgConstant;
 import org.inchain.mq.MQModule;
 import org.inchain.rpcserver.intf.RpcServerModule;
 import org.inchain.util.cfg.ConfigLoader;
+import org.inchain.util.cfg.I18nUtils;
 import org.inchain.util.log.Log;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -44,6 +45,7 @@ public class Bootstrap {
             if (!result) {
                 break;
             }
+            System.out.println(I18nUtils.get(10001));
             Log.info("");
         } while (false);
     }

@@ -13,7 +13,7 @@ public enum ErrorCode {
     FILENOTFOUND(2, 10002),
     NULLPARAMETER(3, 10003),
 
-
+    LANGUAGECANNOTSETTONULL(100,10100),
     UNKOWN(88, 99999);
 
     private final int msg;
