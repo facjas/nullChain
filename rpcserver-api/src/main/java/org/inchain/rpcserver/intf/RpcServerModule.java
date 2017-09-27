@@ -1,4 +1,5 @@
-package org.inchain.mq;
+package org.inchain.rpcserver.intf;
+
 
 import org.inchain.task.InchainModule;
 import org.inchain.task.ModuleStatus;
@@ -7,9 +8,8 @@ import org.inchain.task.ModuleStatus;
  * Created by Niels on 2017/9/26.
  * inchain.org
  */
-public abstract class MQModule implements InchainModule {
-
-    protected MQModule(){
+public abstract class RpcServerModule implements InchainModule{
+    protected RpcServerModule(){
         this.moduleName = this.getClass().getSimpleName();
         this.status = ModuleStatus.UNSTART;
     }
@@ -39,4 +39,5 @@ public abstract class MQModule implements InchainModule {
     public void setStatus(ModuleStatus status) {
         this.status = status;
     }
+
 }

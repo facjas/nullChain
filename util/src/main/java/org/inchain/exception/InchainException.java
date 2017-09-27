@@ -1,30 +1,40 @@
 package org.inchain.exception;
 
+import org.inchain.util.constant.ErrorCode;
+
 /**
- *
  * Created by Niels on 2017/9/26.
  * inchain.org
  */
 public class InchainException extends RuntimeException {
-    /**
-     * Constructs a new exception with {@code null} as its detail message.
-     * The cause is not initialized, and may subsequently be initialized by a
-     * call to {@link #initCause}.
-     */
-    public InchainException() {
-        super();
-    }
 
+    private int code;
+    private String message;
     /**
      * Constructs a new exception with the specified detail message.  The
      * cause is not initialized, and may subsequently be initialized by
      * a call to {@link #initCause}.
      *
-     * @param   message   the detail message. The detail message is saved for
-     *          later retrieval by the {@link #getMessage()} method.
+     * @param message the detail message. The detail message is saved for
+     *                later retrieval by the {@link #getMessage()} method.
      */
     public InchainException(String message) {
         super(message);
+        this.message = message;
+    }
+    /**
+     * Constructs a new exception with the specified detail message.  The
+     * cause is not initialized, and may subsequently be initialized by
+     * a call to {@link #initCause}.
+     *
+     * @param message the detail message. The detail message is saved for
+     *                later retrieval by the {@link #getMessage()} method.
+     */
+    public InchainException(ErrorCode message) {
+        super(message.getMsg());
+        this.code = message.getCode();
+        this.message = message.getMsg();
+        ;
     }
 
     /**
@@ -33,16 +43,19 @@ public class InchainException extends RuntimeException {
      * {@code cause} is <i>not</i> automatically incorporated in
      * this exception's detail message.
      *
-     * @param  message the detail message (which is saved for later retrieval
-     *         by the {@link #getMessage()} method).
-     * @param  cause the cause (which is saved for later retrieval by the
-     *         {@link #getCause()} method).  (A <tt>null</tt> value is
-     *         permitted, and indicates that the cause is nonexistent or
-     *         unknown.)
-     * @since  1.4
+     * @param message the detail message (which is saved for later retrieval
+     *                by the {@link #getMessage()} method).
+     * @param cause   the cause (which is saved for later retrieval by the
+     *                {@link #getCause()} method).  (A <tt>null</tt> value is
+     *                permitted, and indicates that the cause is nonexistent or
+     *                unknown.)
+     * @since 1.4
      */
-    public InchainException(String message, Throwable cause) {
-        super(message, cause);
+    public InchainException(ErrorCode message, Throwable cause) {
+        super(message.getMsg(), cause);
+        this.code = message.getCode();
+        this.message = message.getMsg();
+        ;
     }
 
     /**
@@ -53,11 +66,11 @@ public class InchainException extends RuntimeException {
      * wrappers for other throwables (for example, {@link
      * java.security.PrivilegedActionException}).
      *
-     * @param  cause the cause (which is saved for later retrieval by the
-     *         {@link #getCause()} method).  (A <tt>null</tt> value is
-     *         permitted, and indicates that the cause is nonexistent or
-     *         unknown.)
-     * @since  1.4
+     * @param cause the cause (which is saved for later retrieval by the
+     *              {@link #getCause()} method).  (A <tt>null</tt> value is
+     *              permitted, and indicates that the cause is nonexistent or
+     *              unknown.)
+     * @since 1.4
      */
     public InchainException(Throwable cause) {
         super(cause);
@@ -68,18 +81,21 @@ public class InchainException extends RuntimeException {
      * cause, suppression enabled or disabled, and writable stack
      * trace enabled or disabled.
      *
-     * @param  message the detail message.
-     * @param cause the cause.  (A {@code null} value is permitted,
-     * and indicates that the cause is nonexistent or unknown.)
-     * @param enableSuppression whether or not suppression is enabled
-     *                          or disabled
+     * @param message            the detail message.
+     * @param cause              the cause.  (A {@code null} value is permitted,
+     *                           and indicates that the cause is nonexistent or unknown.)
+     * @param enableSuppression  whether or not suppression is enabled
+     *                           or disabled
      * @param writableStackTrace whether or not the stack trace should
      *                           be writable
      * @since 1.7
      */
-    protected InchainException(String message, Throwable cause,
-                        boolean enableSuppression,
-                        boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+    protected InchainException(ErrorCode message, Throwable cause,
+                               boolean enableSuppression,
+                               boolean writableStackTrace) {
+        super(message.getMsg(), cause, enableSuppression, writableStackTrace);
+        this.code = message.getCode();
+        this.message = message.getMsg();
+        ;
     }
 }

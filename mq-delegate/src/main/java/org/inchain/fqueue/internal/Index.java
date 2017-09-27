@@ -1,8 +1,7 @@
 package org.inchain.fqueue.internal;
 
 import org.inchain.fqueue.exception.FileFormatException;
-import org.inchain.fqueue.internal.Entity;
-import org.inchain.queue.util.MappedBufferCleanUtil;
+import org.inchain.queue.impl.util.MappedBufferCleanUtil;
 
 import java.io.File;
 import java.io.IOException;
