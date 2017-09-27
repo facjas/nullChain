@@ -162,13 +162,13 @@
             <version>${aspectj.version}</version>
         </dependency>
 
-        <!--  生成与解析二维码的工具包，需要则打开，不需要则删除
+        <!--  生成与解析二维码的工具包，需要则打开，不需要则删除    -->
         <dependency>
           <groupId>com.google.zxing</groupId>
           <artifactId>core</artifactId>
           <version>3.3.0</version>
         </dependency>
-         -->
+
 
 
     </dependencies>
