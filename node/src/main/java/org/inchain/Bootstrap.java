@@ -34,9 +34,23 @@ public class Bootstrap {
                 break;
             }
             //init modules
+
             //init rpc server
+            result = initRpcServer();
+            if (!result) {
+                break;
+            }
             Log.info("");
         } while (false);
+    }
+
+    /**
+     *
+     * @return 启动结果
+     */
+    private static boolean initRpcServer() {
+
+        return false;
     }
 
     /**

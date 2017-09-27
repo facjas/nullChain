@@ -1,38 +1,42 @@
 package org.inchain.mq;
 
 import org.inchain.task.InchainModule;
-import org.inchain.task.InchainTread;
-
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import org.inchain.task.ModuleStatus;
 
 /**
  * Created by Niels on 2017/9/26.
  * inchain.org
  */
-public abstract class MQModule extends InchainModule {
-    private static MQModule instance = null;
+public abstract class MQModule implements InchainModule {
 
-    public static  MQModule getInstance(){
+    protected MQModule(){
+        this.moduleName = this.getClass().getSimpleName();
+        this.status = ModuleStatus.UNSTART;
+    }
+    private String moduleName;
+    private ModuleStatus status;
 
-        return instance;
+    @Override
+    public String getModuleName() {
+        return this.moduleName;
     }
 
-    /**
-     * 启动队列服务
-     */
-    public void startModule() {
-//        InchainTread t1 = new InchainTread("queueStatusLogThread") {
-//            @Override
-//            public void run() {
-//                QueueManager.startQueueStatusLog();
-//            }
-//        };
-//        t1.setParent(instance);
-//        //启动速度统计任务
-//        ScheduledExecutorService service = new ScheduledThreadPoolExecutor(1);
-//        service.scheduleAtFixedRate(t1, 0, QueueManager.getLatelySecond(), TimeUnit.SECONDS);
+    @Override
+    public void reboot() {
+        this.shutdown();
+        this.start();
     }
 
+    @Override
+    public ModuleStatus getStatus() {
+        return status;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
+
+    public void setStatus(ModuleStatus status) {
+        this.status = status;
+    }
 }

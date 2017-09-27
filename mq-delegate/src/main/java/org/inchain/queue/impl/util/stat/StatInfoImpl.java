@@ -83,7 +83,7 @@ public class StatInfoImpl implements StatInfo {
         log.append(latelySecond);
         log.append("秒取出速度：");
         log.append(latelyOutTps);
-        log.append("条/秒");
+        log.append("条/秒\n");
         return log.toString();
     }
 
