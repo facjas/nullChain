@@ -52,10 +52,6 @@ public class SystemLogAspect {
 
     @AfterThrowing(value="aspectJMethod()", throwing="e")
     public void doThrowing(JoinPoint joinPoint,Exception e){
-        System.out.println("-----doThrowing()开始-----");
-        System.out.println(" 错误信息："+e.getMessage());
-        System.out.println(" 此处意在执行核心业务逻辑出错时，捕获异常，并可做一些日志记录操作等等");
-        System.out.println(" 可通过joinPoint来获取所需要的内容");
-        System.out.println("-----End of doThrowing()------");
+        Log.error("",e);
     }
 }

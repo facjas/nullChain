@@ -12,15 +12,16 @@
 
     <!--开启spring注解扫描 -->
     <context:component-scan base-package="org.inchain.*"/>
-    <!-- 配置加载的外部配置项 -->
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath:rpc-server.properties</value>
-            </list>
-        </property>
-    </bean>
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
-
+    <beans profile="dev">
+        <context:property-placeholder location="classpath:config/dev/rpc-server.properties" ignore-unresolvable="false"/>
+    </beans>
+    <beans profile="test">
+        <context:property-placeholder location="classpath:config/test/rpc-server.properties" ignore-unresolvable="false"/>
+    </beans>
+    <beans profile="pro">
+        <context:property-placeholder location="classpath:config/pro/rpc-server.properties" ignore-unresolvable="false"/>
+    </beans>
+    <beans>
+        <aop:aspectj-autoproxy proxy-target-class="true"/>
+    </beans>
 </beans>
