@@ -10,7 +10,7 @@
     <artifactId>node</artifactId>
     <packaging>jar</packaging>
 
-    <name>cilent</name>
+    <name>node</name>
     <url>http://maven.apache.org</url>
 
     <properties>

@@ -1,10 +1,10 @@
 package org.inchain.util.log;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
-import org.apache.logging.log4j.core.LoggerContext;
+
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.LoggerContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ public final class Log {
     /**
      * 日志对象
      */
-    private static final Logger LOG = ((LoggerContext) LogManager.getContext(false)).getLogger(Log.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(Log.class.getName());
 
     /**
      * 日志级别
@@ -52,7 +52,6 @@ public final class Log {
         LOG_LEVELS.put("INFO", Level.INFO);
         LOG_LEVELS.put("WARN", Level.WARN);
         LOG_LEVELS.put("ERROR", Level.ERROR);
-        LOG_LEVELS.put("FATAL", Level.FATAL);
     }
 
     /**
@@ -210,36 +209,7 @@ public final class Log {
         LOG.trace(logContent, throwable);
     }
 
-    /**
-     * 提供fatal级别基本的日志输出
-     *
-     * @param msg 需要显示的消息
-     */
-    public static void fatal(String msg) {
-        String logContent = isStringBlank(getId()) ? (getLogTrace() + ":" + msg)
-                : (getLogTrace() + "[" + getId() + "]" + ":" + msg);
 
-        LOG.fatal(logContent);
-    }
-    public static void fatal(String msg,Object ...objs) {
-        String logContent = isStringBlank(getId()) ? (getLogTrace() + ":" + msg)
-                : (getLogTrace() + "[" + getId() + "]" + ":" + msg);
-
-        LOG.fatal(logContent,objs);
-    }
-
-    /**
-     * 提供fatal级别基本的日志输出
-     *
-     * @param msg       需要显示的消息
-     * @param throwable 异常信息
-     */
-    public static void fatal(String msg, Throwable throwable) {
-        String logContent = isStringBlank(getId()) ? (getLogTrace() + ":" + msg)
-                : (getLogTrace() + "[" + getId() + "]" + ":" + msg);
-
-        LOG.fatal(logContent, throwable);
-    }
 
     private static boolean isStringBlank(String val) {
         return null == val || val.trim().isEmpty();
@@ -272,16 +242,16 @@ public final class Log {
         return logTrace.toString();
     }
 
-    /**
-     * 设置日志级别
-     *
-     * @param level 日志级别
-     */
-    public static void setLevel(String level) {
-        if (LOG_LEVELS.containsKey(level.toUpperCase())) {
-            LOG.setLevel(LOG_LEVELS.get(level.toUpperCase()));
-        }
-    }
+//    /**
+//     * 设置日志级别
+//     *
+//     * @param level 日志级别
+//     */
+//    public static void setLevel(String level) {
+//        if (LOG_LEVELS.containsKey(level.toUpperCase())) {
+//            LOG.setLevel(LOG_LEVELS.get(level.toUpperCase()));
+//        }
+//    }
 
     /**
      * 获取当前线程16位唯一序列号

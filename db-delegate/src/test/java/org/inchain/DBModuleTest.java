@@ -32,7 +32,10 @@ public class DBModuleTest extends TestCase {
         }
         Log.info("get application context");
         try {
-            applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+            String[] xmls = new String[2];
+            xmls[0] = "classpath:/applicationContext.xml";
+            xmls[1] = "classpath:/database-h2.xml";
+            applicationContext = new ClassPathXmlApplicationContext(xmls);
         } catch (Exception e) {
             if (e instanceof FileNotFoundException) {
                 Log.error("There is not applicationContext.xml in classpath!", e);
@@ -42,5 +45,11 @@ public class DBModuleTest extends TestCase {
             return;
         }
         Log.info("System is started!");
+    }
+
+    @org.junit.Test
+    public void testDB() {
+
+        init();
     }
 }
